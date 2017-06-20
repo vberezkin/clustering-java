@@ -1,6 +1,5 @@
 package clustering
 
-import clustering.SimpleClustering
 import org.junit.Assert
 import org.junit.Test
 
@@ -37,8 +36,8 @@ class LocationCluster {
     }
 
     private fun clusterCount(latitudes: DoubleArray, longitudes: DoubleArray): Int {
-        val latCosines = DoubleArray(latitudes.size) { i ->
-            Math.cos(Math.toRadians(latitudes[i]))
+        val latCosines = DoubleArray(latitudes.size) {
+            Math.cos(Math.toRadians(latitudes[it]))
         }
         val degreeStep = EarthRadius * Math.PI / 180
         val linkageDistanceDegree = LinkageMaxDistanceMeters / degreeStep
